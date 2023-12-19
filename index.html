@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Quer Dançar?</title>
+</head>
+<body class="gradient">
+    <h1 class="text">Quer casar comigo?</h1>
+    
+    <div id="button-container">
+        <button class="moveable-button button-75" onclick="sim()" id="yes-button"><span class="text">Sim</span></button>
+        <button class="moveable-button button-75" id="no-button" onmouseover="moveButton()" onclick="moveButton()">Não</button>
+    </div>
+
+    <script>
+        function moveButton() {
+            const button = document.getElementById('no-button');
+            const buttonContainer = document.getElementById('button-container');
+            const buttonWidth = button.offsetWidth;
+            const buttonHeight = button.offsetHeight;
+
+            // Ajuste o valor de maxX e maxY para aumentar ou diminuir a área de movimento
+            const maxX = buttonContainer.clientWidth - buttonWidth + 200;
+            const maxY = buttonContainer.clientHeight - buttonHeight + 200;
+
+            const newX = Math.random() * maxX;
+            const newY = Math.random() * maxY;
+
+            button.style.transform = `translate(${newX}px, ${newY}px)`;
+        }
+
+        function sim(){
+          alert('Você agora é minha e de mais ninguem hehehehe.\n\nEu te amo minha princesa \u2764\u{1F60D}\u2764')
+        }
+    </script>
+</body>
+</html>
